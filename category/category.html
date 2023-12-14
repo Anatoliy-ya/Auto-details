@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница Категории</title>
+    <link rel="stylesheet" href="category.css" />
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div id="header1" class="header1"></div>
+      <div class="logo">
+        <a href="../index.html"><img src="../assets/logo2.png" alt="logo" /></a>
+      </div>
+      <div id="header2" class="header2">
+        <nav>
+          <ul>
+            <li><a data-scroll="#about" href="../index.html#about">О компании</a></li>
+            <li><a data-scroll="#products" href="../index.html#products">Продукция</a></li>
+            <li><a data-scroll="#guarantee" href="../index.html#guarantee">Гарантия</a></li>
+            <li>
+              <a data-scroll="#contacts" href="../index.html#contacts">Контакты и Поддержка</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="red-line"></div>
+    <div class="category">
+      <div class="sidebar">
+        <h2>Категории</h2>
+        <ul id="category-list">
+          <li><a href="javascript:void(0)" data-category="1Progress">Категория 1</a></li>
+          <li><a href="javascript:void(0)" data-category="2Progress">Категория 2</a></li>
+          <li><a href="javascript:void(0)" data-category="3Progress">Категория 3</a></li>
+          <li><a href="javascript:void(0)" data-category="4Progress">Категория 4</a></li>
+          <li><a href="javascript:void(0)" data-category="5Progress">Категория 5</a></li>
+          <li><a href="javascript:void(0)" data-category="6Progress">Категория 6</a></li>
+          <li><a href="javascript:void(0)" data-category="7Progress">Категория 7</a></li>
+          <li><a href="javascript:void(0)" data-category="8Progress">Категория 8</a></li>
+          <li><a href="javascript:void(0)" data-category="9Progress">Категория 9</a></li>
+        </ul>
+      </div>
+      <div class="container-products">
+        <h1>Товары</h1>
+        <div class="products" id="products"></div>
+      </div>
+      <div id="productModal" class="modal">
+        <div class="modal-content">
+          <img id="modalImage" src="" alt="Товар" />
+          <div class="textInfo" id="textInfo">
+            <h3 id="modalName"></h3>
+            <hr />
+            <b>Описание:</b>
+            <p id="modalDescription"></p>
+            <b>Наличие:</b>
+            <p id="modalAvailable"></p>
+            <b>Артикул:</b>
+            <p id="modalArticle"></p>
+            <b>Модель:</b>
+            <p id="modalModel"></p>
+            <b>Комплектация:</b>
+            <p id="modalComplete"></p>
+          </div>
+          <!-- Дополнительные элементы информации о товаре -->
+          <span class="close">&times;</span>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="category.js"></script>
+  </body>
+</html>
