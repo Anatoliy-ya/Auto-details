@@ -28,3 +28,37 @@ window.addEventListener('scroll', function () {
     header.classList.remove('fixed');
   }
 });
+
+// JavaScript для слайдера
+
+let slideIndex = 1;
+let slides = document.getElementsByClassName('carousel-item'); // Переместите slides на глобальный уровень
+showSlides(slideIndex);
+
+function moveSlide(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName('carousel-item');
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+// Добавляем автоматическое переключение
+setInterval(function () {
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  showSlides(slideIndex);
+}, 2000); // 5000 мс = 5 секунд

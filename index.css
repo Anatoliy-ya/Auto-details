@@ -7,88 +7,59 @@ body {
   display: none;
 }
 
-#header {
-  position: absolute;
-  left: 0.5rem;
-  right: 0.5rem;
-}
-
-#header1 {
-  position: absolute;
-  top: 8rem;
-  left: 0rem;
-  right: 1rem;
-  width: 4.5rem;
-  background-color: #d65e5d;
-  height: 45px; /* Измените на нужную вам высоту */
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
-  z-index: 10;
-  border: 2px solid black;
-  border-radius: 7px;
-}
-
 /* Стили для шапки */
-#header2 {
-  position: absolute;
-  top: 8rem;
-  left: 16rem;
-  right: 0rem;
-  background-color: #d65e5d;
-  height: 45px; /* Измените на нужную вам высоту */
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
-  z-index: 10;
-  border: 2px solid black;
-  border-radius: 7px;
-  min-width: 30.5rem;
-}
-
-/* #header.fixed {
+header {
   position: fixed;
-  background-color: black; 
-  color: white;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: black;
   color: white;
-  height: 100px; 
+  height: 100px; /* Измените на нужную вам высоту */
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
+}
+
+#header.fixed {
+  position: fixed;
+  background-color: black; /* Новые стили при зафиксированной шапке */
+  color: white; /* Новые стили при зафиксированной шапке */
+  background-color: black;
+  color: white;
+  height: 100px; /* Измените на нужную вам высоту */
   display: flex;
 
   align-items: center;
   justify-content: center;
   z-index: 5;
-} */
+}
 
 .logo {
-  position: relative;
-  margin-top: 4rem;
-  margin-right: 50px;
-  margin-left: 5rem;
-  z-index: 10;
+  margin-right: 10rem;
+  margin-left: 10rem;
 }
 
 .logo img {
-  max-height: 225px;
-  border: 2px solid black;
-  border-radius: 7px;
+  max-height: 90px;
 }
 
+#header_contacts {
+  margin-right: 10rem;
+}
 nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  margin-left: 15rem;
   display: flex;
   align-items: center; /* Чтобы выровнять кнопки по вертикали с логотипом */
-  justify-content: center;
-  flex-wrap: nowrap; /* Разрешаем перенос элементов на узких экранах */
 }
 
 nav ul li {
-  margin-right: 100px; /* Расстояние между кнопками */
+  margin-right: 50px; /* Расстояние между кнопками */
+  margin-bottom: 10px; /* Добавляем отступ снизу для кнопок */
 }
 
 nav ul li:last-child {
@@ -97,82 +68,137 @@ nav ul li:last-child {
 
 nav ul li a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Стили для ховера */
 nav ul li a:hover {
-  color: #f0f0f0; /* Изменяем цвет текста на красный при ховере */
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+  color: #f36366; /* Изменяем цвет текста на красный при ховере */
+}
+
+nav ul li:first-child a {
+  white-space: nowrap;
 }
 
 /* Стили для красной линии */
 .red-line {
   height: 5px; /* Высота линии */
-  background-color: #d65e5d; /* Цвет линии */
+  background-color: #f36366; /* Цвет линии */
   bottom: 0; /* Помещаем линию внизу шапки */
   left: 0; /* Начало линии слева */
   right: 0; /* Конец линии справа */
-  min-width: 41rem;
 }
-
-/* Стили для блока "О компании" */
+/* Стили для блока карусель */
 .about {
   background-image: url('assets/background_main_dark.png'); /* Замените на путь к вашей фоновой картинке */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  padding: 20rem 0; /* Высота и отступы по вашему усмотрению */
+  padding: 4rem 0;
   text-align: center;
   min-width: 41rem;
 }
 
-/* .about-bg {
-  background-color: rgba(0, 0, 0, 0.5); 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-} */
-
-.about-content {
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 2px solid #d65e5d;
-  border-radius: 10px;
-  padding: 10px;
-  max-width: 60%;
-  min-width: 33rem;
-  z-index: 1; /* Помещаем контент над фоном */
-  margin: 0 auto; /* Центрируем контент по горизонтали */
+.carousel {
   position: relative;
+  min-width: 45rem; /* Можно изменить в зависимости от желаемого размера */
+  max-width: 45rem;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
-.about h2 {
-  font-size: 35px;
+.carousel-inner .carousel-item {
+  text-align: center;
+  color: white; /* Цвет текста, чтобы он выделялся на тёмном фоне */
+}
+
+.carousel-inner {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  height: 35rem;
+}
+
+.carousel-item {
+  width: 100%; /* Каждый слайд занимает 100% ширины .carousel-inner */
+  height: 100%;
+  left: 100%; /* Стартовая позиция каждого слайда - за пределами видимой области */
+  transition: left 0.5s ease-in-out; /* Плавная анимация для смещения */
+}
+
+.carousel-item.active {
+  left: 0; /* Активный слайд позиционируем в начале контейнера */
+}
+
+.carousel-item img {
+  max-width: 100%; /* Максимальная ширина изображения - 100% от ширины слайда */
+  max-height: 100%; /* Максимальная высота изображения - 100% от высоты слайда */
+  object-fit: cover; /* Изображение будет покрывать весь слайд, сохраняя свои пропорции */
+  display: block;
+  margin: auto;
+}
+
+.carousel-control {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white; /* Цвет стрелок */
   font-weight: bold;
+  font-size: 28px;
+  transition: 0.6s ease;
+  user-select: none;
+  z-index: 5;
+  border-radius: 10px;
 }
 
-.about p {
-  font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 20px;
-  line-height: 2.2rem;
+.carousel-control:hover {
+  border: 1px solid #f36365;
+  border-radius: 10px;
+  color: #ff3134;
+  background-color: black;
+  opacity: 0.8;
 }
 
-/* Немного серый цвет текста */
-.about-content h2,
-.about-content p {
-  color: rgb(214, 214, 214);
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
+}
+
+.button-partner a {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  color: white; /* Цвет подписей */
+  border: 2px solid #f36365;
+  border-radius: 10px;
+  color: #000000;
+  background-color: #f36365;
+  padding: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.button-partner a:hover {
+  border: 2px solid #000000;
+  transition: 0.6s ease;
 }
 
 /* Раздел для продуктов ================================================================*/
 .products {
-  height: 30rem 0;
   text-align: center;
   justify-content: center;
   min-width: 41rem;
@@ -184,29 +210,22 @@ nav ul li a:hover {
 }
 
 .сategory {
-  border: 2px solid #d65e5d;
-  border-radius: 10px;
-  margin: 5rem auto;
-  max-height: 70%;
-  min-height: 60%;
-  min-width: 33rem;
-  max-width: 80%;
-  padding: 25px;
+  padding: 65px;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 столбцов */
+  grid-template-columns: repeat(4, 1fr); /* 4 столбцов */
   gap: 20px; /* Расстояние между кнопками */
   align-content: space-around; /* Выравнивание по вертикали по центру */
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
-  border: 1px solid #d65e5d;
   border-radius: 10px;
-  max-width: 8rem;
-  max-height: 10rem;
-  min-width: 4rem;
-  min-height: 6rem;
+  min-width: 20rem;
+  min-height: 20rem;
   text-decoration: none;
 }
 
@@ -372,13 +391,17 @@ footer p {
 
 /* Медиазапрос для узких экранов (например, меньше 810px) */
 @media (max-width: 1400px) {
-  nav ul {
-    align-items: center; /* Выравниваем кнопки по центру */
-    margin-left: 6rem;
-  }
-
   nav ul li {
     margin-right: 3rem; /* Убираем правый отступ между кнопками */
+  }
+
+  .logo {
+    margin-right: 5rem;
+    margin-left: 5rem;
+  }
+
+  #header_contacts {
+    margin-right: 5rem;
   }
 
   .сategory {
@@ -397,37 +420,15 @@ footer p {
 }
 
 @media (max-width: 821px) {
-  header {
-    padding-right: 100px;
-  }
-  #header {
-    left: 0.3rem;
-    right: 0.3rem;
-  }
-
-  #header1 {
-    width: 2.5rem;
-    height: 40px;
-    top: 5rem;
-  }
-
-  #header2 {
-    left: 9.8rem;
-    height: 40px;
-    top: 5rem;
-  }
-
   .logo {
     position: relative;
-    margin-top: 2rem;
     margin-right: 50px;
     margin-left: 3rem;
     z-index: 10;
   }
 
-  .logo img {
-    max-width: 6.3rem; /* Уменьшаем размер логотипа на узких экранах */
-    min-width: 70px;
+  #header_contacts {
+    margin-right: 3rem;
   }
 
   nav ul {
@@ -442,19 +443,7 @@ footer p {
   nav ul li a {
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.8rem;
-  }
-
-  .about {
-    padding: 220px 0;
-  }
-
-  .about-content h2 {
-    font-size: 1.1rem;
-  }
-  .about-content p {
     font-size: 0.9rem;
-    line-height: 1.6rem;
   }
 
   .products h2 {

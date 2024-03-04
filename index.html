@@ -1,57 +1,98 @@
+<!-- Документ HTML5 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Блок <head> содержит мета-информацию и ссылки на внешние ресурсы -->
     <meta charset="UTF-8" />
+    <!-- Кодировка символов -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Для корректного отображения на мобильных устройствах -->
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js"></script>
+    <!-- Подключение внешнего файла стилей -->
+
+    <!-- Подключение внешнего файла скриптов -->
     <title>Progress</title>
+    <!-- Заголовок вкладки браузера -->
   </head>
   <body>
-    <header id="header" class="header">
-      <div id="header1" class="header1"></div>
-      <div class="logo">
-        <img src="assets/logo2.png" alt="logo" />
+    <!-- Блок <header> содержит шапку сайта -->
+    <header id="header">
+      <a href="index.html" class="logo">
+        <!-- Ссылка с логотипом компании -->
+        <img src="assets\logo2.png" alt="logo" />
+        <!-- Изображение логотипа -->
+      </a>
+      <div id="header_contacts">
+        <!-- Блок с контактной информацией -->
+        <p>Контакты</p>
+        <p>+7 999 999 99 99</p>
+        <p>support@progress</p>
       </div>
-      <div id="header2" class="header2">
-        <nav>
-          <ul>
-            <li><a data-scroll="#about" href="#">О компании</a></li>
-            <li><a data-scroll="#products" href="#">Продукция</a></li>
-            <li><a data-scroll="#guarantee" href="#">Гарантия</a></li>
-            <li><a data-scroll="#contacts" href="#">Контакты и Поддержка</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        <!-- Навигационное меню сверху -->
+        <ul>
+          <!-- Список ссылок навигационного меню -->
+          <li><a data-scroll="#about" href="#">О компании</a></li>
+          <li><a data-scroll="#products" href="#">Продукция</a></li>
+          <li><a data-scroll="#guarantee" href="#">Гарантия</a></li>
+          <li><a data-scroll="#contacts" href="#">Контакты и Поддержка</a></li>
+        </ul>
+      </nav>
     </header>
     <div class="red-line"></div>
+    <!-- Декоративная красная линия -->
 
+    <!-- Раздел "О компании" -->
     <section id="about" class="about">
       <div class="about-content">
-        <h2>О компании</h2>
-        <p>
-          Компания <b>Progress</b> была создана в 2009 году для продвижения автокомпонентов,
-          аксессуаров и инструмента под торговой маркой <b>Progress</b>. Сегодня
-          <b>Progress</b> предлагает широкий ассортимент из более 1500 наименований, разработанных
-          на основе детального исследования и анализа мирового парка автомобилей немецкой
-          инжиниринговой компанией HOFER GMBH. Компания имеет налаженные связи с крупнейшими
-          производителями автокомпонентов, расположенными в более чем 20 странах по всему миру.
-          Компания предъявляет высокие требования к оборудованию, используемому на производстве, к
-          качеству производимой продукции, а также имеет все возможности своевременно разрабатывать
-          и производить новые продукты. Традиционные немецкие стандарты качества и тщательный
-          контроль при производстве позволяют обеспечить высокую надежность продукции под маркой
-          <b>Progress</b>.
-        </p>
+        <div class="carousel">
+          <div class="carousel-inner">
+            <!-- Слайд 1 -->
+            <div class="carousel-item active">
+              <img src="assets\nasos.jpg" alt="Категория 1" />
+            </div>
+            <!-- Слайд 2 -->
+            <div class="carousel-item">
+              <img
+                src="assets\k0VlZNo4tJdiN8zf8YzojXAb0ebljmiV_xidRD8c41KYMP3fSED8_Hpud_n1bApoBI27Z5wbkV5vC7Z5JPuevECD.jpg"
+                alt="Категория 2"
+              />
+            </div>
+            <div class="carousel-item">
+              <img src="assets\zapchasti-ekspress.jpg" alt="Категория 2" />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="assets\FOBkHFG02Gm4pmwxLKS7O47T90sKyHNux4umq60HMdSBWaB4l9prXIEtQDc0O3geNLsmuRV8456uze8AdjVehPrr.jpg"
+                alt="Категория 2"
+              />
+            </div>
+            <!-- Добавление новых слайдов по аналогии -->
+          </div>
+
+          <!-- Кнопки управления -->
+        </div>
+        <a class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="carousel-control next" onclick="moveSlide(1)">&#10095;</a>
+        <div class="button-partner">
+          <a data-scroll="#contacts" href="#">Стань нашим партнёром</a>
+        </div>
       </div>
       <div class="about-bg"></div>
+      <!-- Фоновое изображение для раздела -->
     </section>
     <div id="products" class="red-line"></div>
+    <!-- Декоративная красная линия и якорь для навигации по продукции -->
 
+    <!-- Раздел "Продукция" -->
     <section class="products">
-      <h2>Продукция</h2>
+      <h2>Категории</h2>
+      <!-- Заголовок раздела -->
       <div class="сategory">
+        <!-- Список категорий продукции -->
+        <!-- Каждый элемент категории содержит изображение и название -->
         <a href="category/category.html?category=1Progress" class="item">
-          <img src="assets\sistema-pitaniya-42-37-0.jpg" alt="logo" />1Progress
+          <img src="assets\nasos.jpg" alt="logo" />1Progress<!--изображение и название-->
         </a>
         <a href="category/category.html?category=2Progress" class="item">
           <img src="assets\sistema-pitaniya-42-37-0.jpg" alt="logo" />2Progress
@@ -62,47 +103,21 @@
         <a href="category/category.html?category=4Progress" class="item">
           <img src="assets\sistema-pitaniya-42-37-0.jpg" alt="logo" />4Progress
         </a>
-        <a href="category/category.html?category=5Progress" class="item">
-          <img src="assets\sistema-pitaniya-42-37-0.jpg" alt="logo" />5Progress
-        </a>
-        <a href="category/category.html?category=6Progress" class="item">
-          <img src="assets\sistema-pitaniya-42-37-0.jpg" alt="logo" />6Progress
-        </a>
-        <a href="category/category.html?category=7Progress" class="item">
-          <img src="assets\tormoznaya-sistema-42-37-0.jpg" alt="logo" />7Progress
-        </a>
-        <a href="category/category.html?category=8Progress" class="item">
-          <img src="assets\tormoznaya-sistema-42-37-0.jpg" alt="logo" />8Progress
-        </a>
-        <a href="category/category.html?category=9Progress" class="item">
-          <img src="assets\tormoznaya-sistema-42-37-0.jpg" alt="logo" />9Progress
-        </a>
-        <a href="category/category/category.html?category=10Progress" class="item">
-          <img src="assets\tormoznaya-sistema-42-37-0.jpg" alt="logo" />Progress
-        </a>
-        <a href="category/category.html?category=11Progress" class="item">
-          <img src="assets\tormoznaya-sistema-42-37-0.jpg" alt="logo" />Progress
-        </a>
-        <a href="category/category.html?category=12Progress" class="item">
-          <img src="assets\tormoznaya-sistema-42-37-0.jpg" alt="logo" />Progress
-        </a>
-        <a class="item"> <img src="assets\perekluchateli-42-37-0.jpg" alt="logo" />3Progress </a>
-        <a class="item"> <img src="assets\perekluchateli-42-37-0.jpg" alt="logo" />Progress </a>
-        <a class="item"> <img src="assets\perekluchateli-42-37-0.jpg" alt="logo" />Progress </a>
-        <a class="item"> <img src="assets\perekluchateli-42-37-0.jpg" alt="logo" />Progress </a>
-        <a class="item"> <img src="assets\perekluchateli-42-37-0.jpg" alt="logo" />Progress </a>
-        <a class="item"> <img src="assets\perekluchateli-42-37-0.jpg" alt="logo" />Progress </a>
-        <a class="item"><img src="assets\roliki-42-37-0.jpg" alt="logo" />4Progress</a>
-        <a class="item"><img src="assets\roliki-42-37-0.jpg" alt="logo" />Progress</a>
-        <a class="item"><img src="assets\roliki-42-37-0.jpg" alt="logo" />Progress</a>
+
+        <!-- Повторение структуры для каждой категории продукции -->
       </div>
     </section>
     <div class="red-line"></div>
+    <!-- Декоративная красная линия -->
 
+    <!-- Раздел "Гарантия" -->
     <section id="guarantee" class="guarantee">
       <div class="guarantee-content">
+        <!-- Контент раздела гарантии -->
         <h2>Гарантия</h2>
+        <!-- Заголовок раздела -->
         <p>
+          <!-- Текстовое содержимое гарантийных обязательств -->
           УВАЖАЕМЫЙ ПОКУПАТЕЛЬ! Компания <b>Progress</b> гарантирует высокое качество и безупречное
           функционирование данного изделия при соблюдении правил установки и эксплуатации.
           Предприятия, производящие продукцию <b>Progress</b>, аттестованы международными органами
@@ -128,47 +143,67 @@
       </div>
     </section>
     <div class="red-line"></div>
+    <!-- Декоративная красная линия -->
 
+    <!-- Раздел "Контакты и Поддержка" -->
     <section id="contacts" class="contacts">
       <h2>Контакты и Поддержка</h2>
+      <!-- Заголовок раздела -->
       <div class="contacts-container">
+        <!-- Контейнер для контактов -->
+        <!-- Блоки с информацией и иконками -->
         <div class="icon">
           <i id="number">
             <img src="assets\15099742.png" />
+            <!-- Изображение телефона -->
             <p>+7 999 999 99 99</p>
+            <!-- Номер телефона -->
           </i>
         </div>
         <div class="icon">
           <i id="mail">
             <img src="assets\737562.png" />
-            <p>mybox@gmail.com</p></i
-          >
+            <!-- Изображение почты -->
+            <p>mybox@gmail.com</p>
+            <!-- Адрес электронной почты -->
+          </i>
         </div>
       </div>
     </section>
+    <!-- Форма обратной связи -->
     <section class="support">
       <div class="support-container">
         <form id="contact-form">
+          <!-- Форма для отправки сообщений -->
           <div>
             <label for="name">Имя:</label>
+            <!-- Поле ввода имени -->
             <input type="text" id="name" name="name" required />
           </div>
           <div>
             <label for="email">Email:</label>
+            <!-- Поле ввода электронной почты -->
             <input type="email" id="email" name="email" required />
           </div>
           <div>
             <label for="message">Сообщение:</label>
+            <!-- Поле для ввода сообщения -->
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
           <button type="submit">Отправить</button>
+          <!-- Кнопка отправки формы -->
         </form>
       </div>
     </section>
     <div class="red-line"></div>
+    <!-- Декоративная красная линия -->
+    <script src="index.js"></script>
   </body>
+  <!-- Подвал сайта -->
   <footer>
     <img src="assets\logo3.png" alt="logo" />
+    <!-- Логотип в подвале -->
     <p>© 2023, OOO «PROGRESS» Все права защищены.</p>
+    <!-- Копирайт -->
   </footer>
 </html>
