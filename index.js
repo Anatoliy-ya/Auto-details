@@ -61,4 +61,4 @@ setInterval(function () {
     slideIndex = 1;
   }
   showSlides(slideIndex);
-}, 2000); // 5000 мс = 5 секунд
+}, 4000); // 4000 мс = 5 секунд

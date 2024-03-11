@@ -10,36 +10,43 @@ body {
 /* Стили для шапки */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   background-color: black;
   color: white;
   height: 100px; /* Измените на нужную вам высоту */
+  width: 100%;
   display: flex;
   align-items: center;
-
-  position: relative;
   transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
+  min-width: 41rem;
+  z-index: 5;
+}
+
+.red-line-under-header {
+  height: 5px; /* Высота линии */
+  background-color: #f36366; /* Цвет линии */
+  bottom: 0; /* Помещаем линию внизу шапки */
+  left: 0; /* Начало линии слева */
+  right: 0; /* Конец линии справа */
+  top: 100px;
+  min-width: 41rem;
+  position: fixed;
+  z-index: 6;
 }
 
 #header.fixed {
   position: fixed;
   background-color: black; /* Новые стили при зафиксированной шапке */
   color: white; /* Новые стили при зафиксированной шапке */
-  background-color: black;
-  color: white;
   height: 100px; /* Измените на нужную вам высоту */
   display: flex;
-
   align-items: center;
-  justify-content: center;
   z-index: 5;
+  min-width: 41rem;
 }
 
 .logo {
   margin-right: 10rem;
-  margin-left: 10rem;
+  margin-left: 8rem;
 }
 
 .logo img {
@@ -90,6 +97,7 @@ nav ul li:first-child a {
   bottom: 0; /* Помещаем линию внизу шапки */
   left: 0; /* Начало линии слева */
   right: 0; /* Конец линии справа */
+  min-width: 41rem;
 }
 /* Стили для блока карусель */
 .about {
@@ -98,7 +106,8 @@ nav ul li:first-child a {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  padding: 4rem 0;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
   text-align: center;
   min-width: 41rem;
 }
@@ -201,7 +210,6 @@ nav ul li:first-child a {
 .products {
   text-align: center;
   justify-content: center;
-  min-width: 41rem;
 }
 
 .products h2 {
@@ -224,7 +232,7 @@ nav ul li:first-child a {
   align-items: center;
   background-color: white;
   border-radius: 10px;
-  min-width: 20rem;
+  width: 20rem;
   min-height: 20rem;
   text-decoration: none;
 }
@@ -330,6 +338,7 @@ nav ul li:first-child a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 3rem;
 }
 
 .support-container {
@@ -358,10 +367,22 @@ nav ul li:first-child a {
   margin-top: 1rem;
 }
 
-.support button {
-  border: 1px solid #d65e5d;
-  border-radius: 5px;
-  height: 1.5rem;
+.btn-send {
+  color: white; /* Цвет подписей */
+  border: 1px solid #f36365;
+  border-radius: 10px;
+  color: #000000;
+  background-color: #f36365;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  box-shadow: #000000 2px 2px 4px;
+  border: 1px solid #000000;
+  transition: 0.3s ease;
 }
 
 footer {
@@ -396,16 +417,21 @@ footer p {
   }
 
   .logo {
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 
   #header_contacts {
-    margin-right: 5rem;
+    margin-right: 3rem;
+  }
+
+  .item {
+    width: 12rem;
+    min-height: 12rem;
   }
 
   .сategory {
-    padding-left: 10px;
+    padding-inline: 15px;
   }
 
   .guarantee {
@@ -422,8 +448,8 @@ footer p {
 @media (max-width: 821px) {
   .logo {
     position: relative;
-    margin-right: 50px;
-    margin-left: 3rem;
+    margin-right: 10px;
+    margin-left: 2rem;
     z-index: 10;
   }
 
@@ -446,15 +472,24 @@ footer p {
     font-size: 0.9rem;
   }
 
+  .carousel {
+    min-width: 41rem; /* Можно изменить в зависимости от желаемого размера */
+    max-width: 41rem;
+  }
+
   .products h2 {
     padding-top: 2rem;
   }
 
   .сategory {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 6 столбцов */
-    gap: 4px; /* Расстояние между кнопками */ /* Расстояние между кнопками */
+    grid-template-columns: repeat(2, 1fr); /* 2 столбцов */
     margin: 5rem auto;
+  }
+
+  .item {
+    width: 14rem;
+    min-height: 14rem;
   }
 
   .guarantee-content {

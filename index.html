@@ -9,8 +9,6 @@
     <!-- Для корректного отображения на мобильных устройствах -->
     <link rel="stylesheet" href="index.css" />
     <!-- Подключение внешнего файла стилей -->
-
-    <!-- Подключение внешнего файла скриптов -->
     <title>Progress</title>
     <!-- Заголовок вкладки браузера -->
   </head>
@@ -39,7 +37,7 @@
         </ul>
       </nav>
     </header>
-    <div class="red-line"></div>
+    <div class="red-line-under-header"></div>
     <!-- Декоративная красная линия -->
 
     <!-- Раздел "О компании" -->
@@ -173,7 +171,7 @@
     <!-- Форма обратной связи -->
     <section class="support">
       <div class="support-container">
-        <form id="contact-form">
+        <form id="contact-form" action="https://formspree.io/f/xwkgbdjn" method="POST">
           <!-- Форма для отправки сообщений -->
           <div>
             <label for="name">Имя:</label>
@@ -190,7 +188,7 @@
             <!-- Поле для ввода сообщения -->
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit">Отправить</button>
+          <button class="btn-send" type="submit">Отправить</button>
           <!-- Кнопка отправки формы -->
         </form>
       </div>
