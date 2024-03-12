@@ -9,7 +9,7 @@ body {
 
 /* Стили для шапки */
 header {
-  position: fixed;
+  position: relative;
   background-color: black;
   color: white;
   height: 100px; /* Измените на нужную вам высоту */
@@ -33,16 +33,16 @@ header {
   z-index: 6;
 }
 
-#header.fixed {
+/* #header.fixed {
   position: fixed;
-  background-color: black; /* Новые стили при зафиксированной шапке */
-  color: white; /* Новые стили при зафиксированной шапке */
-  height: 100px; /* Измените на нужную вам высоту */
+  background-color: black; 
+  color: white; 
+  height: 100px; 
   display: flex;
   align-items: center;
   z-index: 5;
   min-width: 41rem;
-}
+} */
 
 .logo {
   margin-right: 10rem;
@@ -106,7 +106,7 @@ nav ul li a {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  padding-top: 8rem;
+  padding-top: 5rem;
   padding-bottom: 4rem;
   text-align: center;
   min-width: 41rem;

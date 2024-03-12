@@ -27,21 +27,9 @@ header {
   bottom: 0; /* Помещаем линию внизу шапки */
   left: 0; /* Начало линии слева */
   right: 0; /* Конец линии справа */
-
   min-width: 41rem;
   position: relative;
   z-index: 6;
-}
-
-#header.fixed {
-  position: fixed;
-  background-color: black; /* Новые стили при зафиксированной шапке */
-  color: white; /* Новые стили при зафиксированной шапке */
-  height: 100px; /* Измените на нужную вам высоту */
-  display: flex;
-  align-items: center;
-  z-index: 5;
-  min-width: 41rem;
 }
 
 .logo {
@@ -243,6 +231,7 @@ nav ul li a {
   top: 0;
   width: 100vw; /* Ширина вьюпорта */
   height: 100vh; /* Высота вьюпорта */
+  overflow: auto; /* Добавить прокрутку, если нужно */
 }
 .modal-overlay {
   z-index: 2;
