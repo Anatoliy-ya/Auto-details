@@ -49,10 +49,8 @@ function fillModalWithProductInfo(product) {
   document.getElementById('modalImage').src = product.imageUrl;
   document.getElementById('modalName').textContent = product.name;
   document.getElementById('modalDescription').textContent = product.description;
-  document.getElementById('modalAvailable').textContent = product.available;
   document.getElementById('modalArticle').textContent = product.article;
   document.getElementById('modalModel').textContent = product.model;
-  document.getElementById('modalComplete').textContent = product.complete;
   // Добавьте здесь другие элементы, которые нужно заполнить
   // Например, вес, размер, модель, артикул и т.д.
 
@@ -73,7 +71,8 @@ span.onclick = function () {
 
 // Когда пользователь кликает в любое место за пределами модального окна, оно закрывается
 window.onclick = function (event) {
-  if (event.target === modal) {
+  console.log(event.target === document.querySelector('.modal-overlay'));
+  if (event.target === document.querySelector('.modal-overlay')) {
     modal.style.display = 'none';
   }
 };

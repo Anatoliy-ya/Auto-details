@@ -1,110 +1,94 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-image: url('../assets/background_main_dark.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Это заставит фон оставаться неподвижным при прокрутке */
-}
-
-html,
-body {
-  height: 100%;
 }
 
 #is-service-frame {
   display: none;
 }
 
-#header {
-  position: absolute;
-  left: 0.5rem;
-  right: 0.5rem;
-}
-
-#header1 {
-  position: absolute;
-  top: 8rem;
-  left: 0rem;
-  right: 1rem;
-  width: 4.5rem;
-  background-color: #d65e5d;
-  height: 45px; /* Измените на нужную вам высоту */
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
-  z-index: 1;
-  border: 2px solid black;
-  border-radius: 7px;
-}
-
 /* Стили для шапки */
-#header2 {
-  position: absolute;
-  top: 8rem;
-  left: 16rem;
-  right: 0rem;
-  background-color: #d65e5d;
-  height: 45px; /* Измените на нужную вам высоту */
+header {
+  position: relative;
+  background-color: black;
+  color: white;
+  height: 100px; /* Измените на нужную вам высоту */
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: left;
   transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
-  z-index: 1;
-  border: 2px solid black;
-  border-radius: 7px;
-  min-width: 30.5rem;
+  min-width: 41rem;
+  z-index: 5;
+}
+
+.red-line-under-header {
+  height: 5px; /* Высота линии */
+  background-color: #f36366; /* Цвет линии */
+  bottom: 0; /* Помещаем линию внизу шапки */
+  left: 0; /* Начало линии слева */
+  right: 0; /* Конец линии справа */
+
+  min-width: 41rem;
+  position: relative;
+  z-index: 6;
+}
+
+#header.fixed {
+  position: fixed;
+  background-color: black; /* Новые стили при зафиксированной шапке */
+  color: white; /* Новые стили при зафиксированной шапке */
+  height: 100px; /* Измените на нужную вам высоту */
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  min-width: 41rem;
 }
 
 .logo {
-  position: relative;
-  margin-top: 4rem;
-  margin-right: 50px;
-  margin-left: 5rem;
-  z-index: 1;
+  margin-right: 10rem;
+  margin-left: 8rem;
 }
 
 .logo img {
-  max-height: 225px;
-  border: 2px solid black;
-  border-radius: 7px;
+  max-height: 90px;
 }
 
+#header_contacts {
+  margin-right: 10rem;
+}
 nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  margin-left: 15rem;
   display: flex;
   align-items: center; /* Чтобы выровнять кнопки по вертикали с логотипом */
-  justify-content: center;
-  flex-wrap: nowrap; /* Разрешаем перенос элементов на узких экранах */
 }
 
 nav ul li {
-  margin-right: 100px; /* Расстояние между кнопками */
+  margin-right: 50px; /* Расстояние между кнопками */
+  margin-bottom: 10px; /* Добавляем отступ снизу для кнопок */
 }
 
 nav ul li:last-child {
-  margin-right: 0; /* У последней кнопки нет правого отступа */
+  margin-right: 10px; /* У последней кнопки нет правого отступа */
 }
 
 nav ul li a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Стили для ховера */
 nav ul li a:hover {
-  color: #f0f0f0; /* Изменяем цвет текста на красный при ховере */
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+  color: #f36366; /* Изменяем цвет текста на красный при ховере */
 }
 
+nav ul li a {
+  white-space: nowrap;
+}
 /* Стили для красной линии */
 .red-line {
   height: 5px; /* Высота линии */
@@ -115,9 +99,20 @@ nav ul li a:hover {
   min-width: 41rem;
 }
 
+.wrapper {
+  background-image: url('../assets/background_main_dark.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-width: 41rem;
+}
 .category {
   display: flex;
   align-items: flex-start;
+  min-width: 41rem;
+  height: 100%;
   /* background-image: url('../assets/background_main_dark.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -129,14 +124,14 @@ nav ul li a:hover {
 
 .sidebar {
   border: 2px solid #000000;
-  border-radius: 5px;
+  border-radius: 10px;
   min-width: 13rem;
   align-self: flex-start;
   /* margin: 20rem 3rem; */
   position: relative;
   margin-left: 3rem;
   margin-right: 2rem;
-  top: 20rem;
+  top: 3rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -147,6 +142,7 @@ nav ul li a:hover {
 }
 
 .sidebar h2 {
+  font-size: 2rem;
 }
 
 .sidebar ul {
@@ -157,13 +153,14 @@ nav ul li a:hover {
 }
 
 .sidebar ul li {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .sidebar ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: 700;
+  font-size: 1.5rem;
 }
 .sidebar ul li a:hover {
   color: #f0f0f0; /* Изменяем цвет текста на красный при ховере */
@@ -171,7 +168,8 @@ nav ul li a:hover {
 }
 
 .container-products {
-  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
   background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid #d65e5d;
   border-radius: 10px;
@@ -180,7 +178,6 @@ nav ul li a:hover {
   /* max-width: 80%;
   min-width: 75%; */
   width: 100%;
-  min-width: 28rem;
   min-height: 75%;
   z-index: 1; /* Помещаем контент над фоном */
   top: 12rem;
@@ -199,6 +196,7 @@ nav ul li a:hover {
   /* grid-template-rows: repeat(4, 1fr);*/ /*6 столбцов */
   gap: 20px; /* Расстояние между карточками */
   justify-items: center;
+  margin-bottom: 2rem;
 }
 
 .product-card {
@@ -239,18 +237,25 @@ nav ul li a:hover {
 
 .modal {
   display: none; /* Скрыто по умолчанию */
-  position: absolute; /* Остается на месте при прокрутке */
+  position: fixed; /* Фиксированное позиционирование относительно вьюпорта */
   z-index: 3; /* Отображается поверх других элементов */
   left: 0;
   top: 0;
-  right: -5;
-  width: 100%; /* Полная ширина */
-  height: 100%; /* Полная высота */
-  overflow: hidden; /* Добавить прокрутку, если нужно */
+  width: 100vw; /* Ширина вьюпорта */
+  height: 100vh; /* Высота вьюпорта */
+}
+.modal-overlay {
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.6); /* Черный с небольшой прозрачностью */
+  position: fixed; /* Фиксированное позиционирование относительно вьюпорта */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Ширина вьюпорта */
+  height: 100vh; /* Высота вьюпорта */
 }
 
 .modal-content {
+  position: relative;
   display: flex;
   flex-direction: row;
   background-color: #fefefe;
@@ -278,6 +283,11 @@ nav ul li a:hover {
 .textInfo {
   color: #d65e5d;
 }
+
+.textInfo p,
+h3 {
+  color: #e4e4e4;
+}
 .close {
   color: #aaa;
   float: right;
@@ -293,16 +303,17 @@ nav ul li a:hover {
 }
 
 @media (max-width: 1400px) {
-  nav ul {
-    align-items: center; /* Выравниваем кнопки по центру */
-    margin-left: 6rem;
-  }
-
   nav ul li {
     margin-right: 3rem; /* Убираем правый отступ между кнопками */
   }
 
-  .container-products {
+  .logo {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+
+  #header_contacts {
+    margin-right: 3rem;
   }
 
   .products {
@@ -310,12 +321,6 @@ nav ul li a:hover {
   }
   .sidebar {
     margin-right: 1rem;
-  }
-
-  .modal-content {
-    margin: 15rem 17rem; /* 15% от верха и по центру */
-    width: 100%;
-    min-width: 55rem;
   }
 }
 
@@ -352,59 +357,43 @@ nav ul li a:hover {
 }
 
 @media (max-width: 821px) {
-  header {
-    padding-right: 100px;
-  }
-  #header {
-    left: 0.3rem;
-    right: 0.3rem;
-  }
-
-  #header1 {
-    width: 2.5rem;
-    height: 40px;
-    top: 5rem;
-  }
-
-  #header2 {
-    left: 9.8rem;
-    height: 40px;
-    top: 5rem;
-  }
-
   .logo {
     position: relative;
-    margin-top: 2rem;
-    margin-right: 50px;
-    margin-left: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
     z-index: 10;
   }
 
-  .logo img {
-    max-width: 6.3rem; /* Уменьшаем размер логотипа на узких экранах */
-    min-width: 70px;
+  #header_contacts {
+    margin-right: 2rem;
   }
 
   nav ul {
     align-items: center; /* Выравниваем кнопки по центру */
-    margin-left: 1rem;
   }
 
   nav ul li {
     margin-right: 15px; /* Убираем правый отступ между кнопками */
   }
+  nav ul li:last-child {
+    margin-right: 25px; /* Убираем правый отступ между кнопками */
+  }
 
   nav ul li a {
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
 
   .sidebar {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     min-width: 8rem;
-    top: 12rem;
+  }
+
+  .sidebar ul li a {
+    font-weight: 600;
+    font-size: 1.3rem;
   }
 
   .container-products {

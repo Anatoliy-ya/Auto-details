@@ -70,7 +70,7 @@ nav ul li {
 }
 
 nav ul li:last-child {
-  margin-right: 0; /* У последней кнопки нет правого отступа */
+  margin-right: 10px; /* У последней кнопки нет правого отступа */
 }
 
 nav ul li a {
@@ -86,7 +86,7 @@ nav ul li a:hover {
   color: #f36366; /* Изменяем цвет текста на красный при ховере */
 }
 
-nav ul li:first-child a {
+nav ul li a {
   white-space: nowrap;
 }
 
@@ -100,7 +100,7 @@ nav ul li:first-child a {
   min-width: 41rem;
 }
 /* Стили для блока карусель */
-.about {
+.one-block {
   background-image: url('assets/background_main_dark.png'); /* Замените на путь к вашей фоновой картинке */
   background-size: cover;
   background-repeat: no-repeat;
@@ -209,12 +209,12 @@ nav ul li:first-child a {
 /* Раздел для продуктов ================================================================*/
 .products {
   text-align: center;
-  justify-content: center;
+  min-width: 41rem;
 }
 
 .products h2 {
   font-size: 2rem;
-  color: #f36366;
+  color: #000000;
 }
 
 .сategory {
@@ -244,6 +244,34 @@ nav ul li:first-child a {
 .item img {
   width: 80%;
   height: 80%;
+}
+
+/* Раздел О компании  ==================================================================*/
+
+.about {
+  position: relative;
+  padding-bottom: 4rem;
+  text-align: center;
+  min-width: 41rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h2 {
+  position: relative;
+  top: 0;
+  font-size: 2rem;
+  color: #000000;
+}
+
+.text-about {
+  margin: auto 5rem;
+  border: 1px solid #d65e5d;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Раздел Гарантия  ==================================================================*/
@@ -342,7 +370,7 @@ nav ul li:first-child a {
 }
 
 .support-container {
-  border: 2px solid #d65e5d;
+  border: 1px solid #d65e5d;
   border-radius: 10px;
   padding: 1rem;
 }
@@ -448,28 +476,30 @@ footer p {
 @media (max-width: 821px) {
   .logo {
     position: relative;
-    margin-right: 10px;
+    margin-right: 2rem;
     margin-left: 2rem;
     z-index: 10;
   }
 
   #header_contacts {
-    margin-right: 3rem;
+    margin-right: 2rem;
   }
 
   nav ul {
     align-items: center; /* Выравниваем кнопки по центру */
-    margin-left: 1rem;
   }
 
   nav ul li {
     margin-right: 15px; /* Убираем правый отступ между кнопками */
   }
+  nav ul li:last-child {
+    margin-right: 25px; /* Убираем правый отступ между кнопками */
+  }
 
   nav ul li a {
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .carousel {
@@ -484,7 +514,7 @@ footer p {
   .сategory {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 столбцов */
-    margin: 5rem auto;
+    margin: 5rem 5rem;
   }
 
   .item {
