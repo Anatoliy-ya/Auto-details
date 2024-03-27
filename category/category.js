@@ -29,10 +29,6 @@ function createProductCard(product) {
   productName.textContent = product.name;
   productCard.appendChild(productName);
 
-  const productModel = document.createElement('p');
-  productModel.textContent = product.model;
-  productCard.appendChild(productModel);
-
   const productAvailable = document.createElement('p');
   productAvailable.textContent = product.available;
   productCard.appendChild(productAvailable);
@@ -50,7 +46,6 @@ function fillModalWithProductInfo(product) {
   document.getElementById('modalName').textContent = product.name;
   document.getElementById('modalDescription').textContent = product.description;
   document.getElementById('modalArticle').textContent = product.article;
-  document.getElementById('modalModel').textContent = product.model;
   // Добавьте здесь другие элементы, которые нужно заполнить
   // Например, вес, размер, модель, артикул и т.д.
 
@@ -71,7 +66,6 @@ span.onclick = function () {
 
 // Когда пользователь кликает в любое место за пределами модального окна, оно закрывается
 window.onclick = function (event) {
-  console.log(event.target === document.querySelector('.modal-overlay'));
   if (event.target === document.querySelector('.modal-overlay')) {
     modal.style.display = 'none';
   }
@@ -81,7 +75,7 @@ window.onclick = function (event) {
 function loadProductsForCategory(category) {
   // Очищаем контейнер товаров перед добавлением новых товаров
   productsContainer.innerHTML = '';
-
+  console.log(category, products.category);
   // Фильтруем товары по выбранной категории и создаем элементы для отображения
   const filteredProducts = products.filter((product) => product.category === category);
 
@@ -94,9 +88,10 @@ function loadProductsForCategory(category) {
 
 document.addEventListener('DOMContentLoaded', function () {
   // Получаем параметр category из URL
+  console.log(window.location.search);
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get('category');
-
+  console.log(category);
   // Проверяем, есть ли параметр category и загружаем товары для этой категории
   if (category) {
     loadProductsForCategory(category);
