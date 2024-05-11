@@ -320,6 +320,14 @@ const products = [
     description: 'Lada Vesta',
     article: 'SH-2180L',
   },
+  {
+    id: 'SH-2180L',
+    name: 'Шаровая опора левая Lada Vesta',
+    category: '6category',
+    imageUrl: '../assets/nasos.jpg',
+    description: 'Lada Vesta',
+    article: 'SH-2180L',
+  },
 ];
 
 export default products;
