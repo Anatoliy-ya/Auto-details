@@ -180,7 +180,7 @@ nav ul li a {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 6 столбцов */
+  grid-template-columns: repeat(4, 1fr); /* 4 столбцов */
   /* grid-template-rows: repeat(4, 1fr);*/ /*6 столбцов */
   gap: 20px; /* Расстояние между карточками */
   justify-items: center;
@@ -193,7 +193,7 @@ nav ul li a {
   align-items: center;
   border: 1px solid #d65e5d;
   border-radius: 5px;
-  width: 12rem;
+  width: 15rem;
   margin-bottom: 1rem;
   height: 100%;
   cursor: pointer;
@@ -204,15 +204,16 @@ nav ul li a {
 }
 
 .product-card img {
-  max-width: 150px;
+  max-width: 14rem;
   margin-top: 0.5rem;
   border-radius: 5px;
   margin-bottom: 0.2rem;
 }
+
 .product-card h5 {
   color: #d65e5d;
   text-align: center;
-  margin: 0;
+  margin: 1rem 0 0 0;
   padding: 0;
   flex-grow: 1;
   text-transform: uppercase;
@@ -248,12 +249,12 @@ nav ul li a {
   display: flex;
   flex-direction: row;
   background-color: #fefefe;
-  margin: 15rem 20rem; /* 15% от верха и по центру */
+  height: 20rem;
+  margin: auto; /* 15% от верха и по центру */
   padding: 20px;
   border: 1px solid #888;
-  min-width: 28rem;
+  min-width: 25rem;
   min-height: 60%;
-  margin-right: 1rem;
   opacity: 100%;
   z-index: 4;
   border: 2px solid #d65e5d;
@@ -262,8 +263,6 @@ nav ul li a {
 }
 
 .modal-content img {
-  width: 500px;
-  height: 500px;
   border: 2px solid #d65e5d;
   border-radius: 10px;
   margin-right: 1rem;
@@ -308,16 +307,18 @@ h3 {
   .products {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .modal-content {
+    min-width: 40rem;
+    min-height: 55%;
+  }
+
   .sidebar {
     margin-right: 1rem;
   }
 }
 
 @media (max-width: 1100px) {
-  .product-card {
-    width: 9rem;
-  }
-
   .products {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -326,21 +327,26 @@ h3 {
     font-size: 11px;
   }
   .product-card img {
-    max-width: 60%;
-    margin-top: 1rem;
+    max-width: 90%;
     border-radius: 5px;
     margin-bottom: 0.2rem;
   }
 
   .modal-content {
-    min-width: 45rem;
+    min-width: 40rem;
+    min-height: 50%;
+    margin-right: 2rem;
   }
 
   .modal-content img {
-    width: 350px;
-    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
     border: 2px solid #d65e5d;
     border-radius: 10px;
+    margin: auto;
     margin-right: 1rem;
   }
 }
@@ -402,19 +408,21 @@ h3 {
     font-size: 10px;
   }
   .product-card img {
-    max-width: 60%;
+    max-width: 90%;
     margin-top: 1rem;
     border-radius: 5px;
     margin-bottom: 0.2rem;
   }
 
   .modal-content {
-    min-width: 35rem;
+    min-width: 40rem;
+    min-height: 55%;
+    margin-right: 2rem;
   }
 
   .modal-content img {
-    width: 250px;
-    height: 250px;
+    width: 70%;
+    height: 70%;
     border: 2px solid #d65e5d;
     border-radius: 10px;
     margin-right: 1rem;
