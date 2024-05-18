@@ -19,8 +19,7 @@ header {
   position: relative;
   background-color: black;
   color: white;
-  height: 100px; /* Измените на нужную вам высоту */
-  width: 100%;
+  height: 120px; /* Измените на нужную вам высоту */
   display: flex;
   align-items: center;
   transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
@@ -57,6 +56,7 @@ nav ul {
   margin: 0;
   display: flex;
   align-items: center; /* Чтобы выровнять кнопки по вертикали с логотипом */
+  flex-wrap: wrap;
 }
 
 nav ul li {
@@ -105,21 +105,14 @@ nav ul li a {
 }
 .category {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   min-width: 41rem;
   height: 100%;
 }
 
 .sidebar {
   border: 2px solid #000000;
-  border-radius: 10px;
-  min-width: 13rem;
-  align-self: flex-start;
-  /* margin: 20rem 3rem; */
-  position: relative;
-  margin-left: 3rem;
-  margin-right: 2rem;
-  top: 3rem;
+  border-radius: 0 0 10px 10px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -127,48 +120,66 @@ nav ul li a {
   align-items: center;
   background-color: #d65e5d;
   z-index: 1;
+  overflow: hidden;
 }
 
 .sidebar h2 {
   font-size: 2rem;
+  margin: 0 0 1rem 0;
 }
 
 .sidebar ul {
+  display: flex;
+  flex-wrap: wrap; /* Перенос элементов на следующую строку */
+  flex-direction: row;
+  justify-content: center;
+  color: rgb(30, 30, 30);
   list-style-type: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 1rem;
 }
 
 .sidebar ul li {
-  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  border-right: #1a1a1a 1px solid;
+  padding: 0 1rem;
+}
+
+.sidebar ul li:last-child {
+  border-right: none;
+  margin-right: 1rem;
+}
+
+.sidebar ul li:first-child {
+  margin-left: 1rem;
 }
 
 .sidebar ul li a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(30, 30, 30);
   font-weight: 700;
   font-size: 1.5rem;
 }
+
 .sidebar ul li a:hover {
   color: #f0f0f0; /* Изменяем цвет текста на красный при ховере */
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
+.sidebar ul li p {
+  text-overflow: ellipsis;
+}
+
 .container-products {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin: 2rem;
   background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid #d65e5d;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 1rem;
-  /* max-width: 80%;
-  min-width: 75%; */
-  width: 100%;
   min-height: 75%;
   z-index: 1; /* Помещаем контент над фоном */
-  top: 12rem;
 }
 
 .container-products h1 {
@@ -180,11 +191,11 @@ nav ul li a {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 столбцов */
-  /* grid-template-rows: repeat(4, 1fr);*/ /*6 столбцов */
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 20px; /* Расстояние между карточками */
   justify-items: center;
   margin-bottom: 2rem;
+  align-content: space-around;
 }
 
 .product-card {
@@ -193,10 +204,10 @@ nav ul li a {
   align-items: center;
   border: 1px solid #d65e5d;
   border-radius: 5px;
-  width: 15rem;
   margin-bottom: 1rem;
-  height: 100%;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .product-card:hover {
@@ -204,8 +215,8 @@ nav ul li a {
 }
 
 .product-card img {
-  max-width: 14rem;
-  margin-top: 0.5rem;
+  width: 90%;
+  margin: 0.5rem;
   border-radius: 5px;
   margin-bottom: 0.2rem;
 }
@@ -213,7 +224,7 @@ nav ul li a {
 .product-card h5 {
   color: #d65e5d;
   text-align: center;
-  margin: 1rem 0 0 0;
+  margin: 1rem 5px 0 5px;
   padding: 0;
   flex-grow: 1;
   text-transform: uppercase;
@@ -221,17 +232,19 @@ nav ul li a {
 
 .product-card p {
   color: #d65e5d;
-  margin: 0;
 }
 
 .modal {
-  display: none; /* Скрыто по умолчанию */
-  position: fixed; /* Фиксированное позиционирование относительно вьюпорта */
-  z-index: 3; /* Отображается поверх других элементов */
-  left: 0;
+  position: fixed;
   top: 0;
-  width: 100vw; /* Ширина вьюпорта */
-  height: 100vh; /* Высота вьюпорта */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Скрыто по умолчанию */
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 3; /* Отображается поверх других элементов */
+  margin: auto;
   overflow: auto; /* Добавить прокрутку, если нужно */
 }
 .modal-overlay {
@@ -240,15 +253,13 @@ nav ul li a {
   position: fixed; /* Фиксированное позиционирование относительно вьюпорта */
   left: 0;
   top: 0;
-  width: 100vw; /* Ширина вьюпорта */
-  height: 100vh; /* Высота вьюпорта */
+  width: 100%; /* Ширина вьюпорта */
+  height: 100%; /* Высота вьюпорта */
 }
 
 .modal-content {
-  position: relative;
   display: flex;
   flex-direction: row;
-  background-color: #fefefe;
   height: 20rem;
   margin: auto; /* 15% от верха и по центру */
   padding: 20px;
@@ -260,6 +271,7 @@ nav ul li a {
   border: 2px solid #d65e5d;
   border-radius: 10px;
   background: #1a1a1a;
+  position: relative;
 }
 
 .modal-content img {
@@ -269,6 +281,8 @@ nav ul li a {
 }
 
 .textInfo {
+  display: flex;
+  flex-direction: column;
   color: #d65e5d;
 }
 
@@ -277,9 +291,12 @@ h3 {
   color: #e4e4e4;
 }
 .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: bold;
 }
 
@@ -304,25 +321,13 @@ h3 {
     margin-right: 3rem;
   }
 
-  .products {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .modal-content {
     min-width: 40rem;
     min-height: 55%;
   }
-
-  .sidebar {
-    margin-right: 1rem;
-  }
 }
 
 @media (max-width: 1100px) {
-  .products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .product-card h5 {
     font-size: 11px;
   }
@@ -334,8 +339,6 @@ h3 {
 
   .modal-content {
     min-width: 40rem;
-    min-height: 50%;
-    margin-right: 2rem;
   }
 
   .modal-content img {
@@ -368,10 +371,11 @@ h3 {
   }
 
   nav ul li {
-    margin-right: 15px; /* Убираем правый отступ между кнопками */
+    margin: 10px 15px;
   }
+
   nav ul li:last-child {
-    margin-right: 25px; /* Убираем правый отступ между кнопками */
+    margin-left: 30px;
   }
 
   nav ul li a {
@@ -380,23 +384,13 @@ h3 {
     font-size: 0.95rem;
   }
 
-  .sidebar {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    min-width: 8rem;
-  }
-
   .sidebar ul li a {
     font-weight: 600;
     font-size: 1.3rem;
   }
 
-  .container-products {
-    top: 9rem;
-    margin-right: 0.5rem;
-  }
   .product-card {
-    width: 8rem;
+    width: 10rem;
   }
 
   .products {
@@ -409,23 +403,22 @@ h3 {
   }
   .product-card img {
     max-width: 90%;
+
     margin-top: 1rem;
     border-radius: 5px;
     margin-bottom: 0.2rem;
   }
 
   .modal-content {
-    min-width: 40rem;
-    min-height: 55%;
-    margin-right: 2rem;
+    flex-direction: column;
+    min-width: 20rem;
   }
 
   .modal-content img {
-    width: 70%;
-    height: 70%;
     border: 2px solid #d65e5d;
     border-radius: 10px;
-    margin-right: 1rem;
+    margin: 0.5rem;
+    height: 50%;
   }
 }
 

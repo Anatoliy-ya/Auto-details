@@ -12,7 +12,7 @@ header {
   position: relative;
   background-color: black;
   color: white;
-  height: 100px; /* Измените на нужную вам высоту */
+  height: 120px; /* Измените на нужную вам высоту */
   width: 100%;
   display: flex;
   align-items: center;
@@ -61,16 +61,12 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  align-items: center; /* Чтобы выровнять кнопки по вертикали с логотипом */
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
   margin-right: 50px; /* Расстояние между кнопками */
-  margin-bottom: 10px; /* Добавляем отступ снизу для кнопок */
-}
-
-nav ul li:last-child {
-  margin-right: 10px; /* У последней кнопки нет правого отступа */
 }
 
 nav ul li a {
@@ -206,10 +202,11 @@ nav ul li a {
   transition: 0.6s ease;
 }
 
-/* Раздел для продуктов ================================================================*/
+/* Раздел с категориями ================================================================*/
 .products {
   text-align: center;
   min-width: 41rem;
+  max-width: 100%;
 }
 
 .products h2 {
@@ -218,11 +215,11 @@ nav ul li a {
 }
 
 .сategory {
-  padding: 65px;
+  padding: 15px;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 столбцов */
-  gap: 20px; /* Расстояние между кнопками */
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* 4 столбцов */
+  gap: 20px 0; /* Расстояние между кнопками */
   align-content: space-around; /* Выравнивание по вертикали по центру */
 }
 
@@ -232,9 +229,9 @@ nav ul li a {
   align-items: center;
   background-color: white;
   border-radius: 10px;
-  width: 20rem;
-  min-height: 20rem;
   text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 
 .item:hover {
@@ -353,6 +350,7 @@ nav ul li a {
 .contacts p {
   font-style: normal;
   font-size: 1.5rem;
+  margin: 1rem;
 }
 
 #mail img,
@@ -441,7 +439,7 @@ footer p {
 /* Медиазапрос для узких экранов (например, меньше 810px) */
 @media (max-width: 1400px) {
   nav ul li {
-    margin-right: 3rem; /* Убираем правый отступ между кнопками */
+    margin: 10px 25px;
   }
 
   .logo {
@@ -454,8 +452,6 @@ footer p {
   }
 
   .item {
-    width: 12rem;
-    min-height: 12rem;
   }
 
   .сategory {
@@ -490,10 +486,12 @@ footer p {
   }
 
   nav ul li {
-    margin-right: 15px; /* Убираем правый отступ между кнопками */
+    margin: 10px 15px;
   }
+
   nav ul li:last-child {
-    margin-right: 25px; /* Убираем правый отступ между кнопками */
+    margin-left: 30px;
+    /* Убираем правый отступ между кнопками */
   }
 
   nav ul li a {
@@ -503,8 +501,8 @@ footer p {
   }
 
   .carousel {
-    min-width: 41rem; /* Можно изменить в зависимости от желаемого размера */
-    max-width: 41rem;
+    min-width: 30rem; /* Можно изменить в зависимости от желаемого размера */
+    max-width: 30rem;
   }
 
   .products h2 {
@@ -519,13 +517,12 @@ footer p {
 
   .item {
     width: 14rem;
-    min-height: 14rem;
+    min-height: 10rem;
   }
 
   .guarantee-content {
-    max-width: 95%;
+    max-width: 70%;
     min-width: 8rem;
-    margin: 3rem;
   }
 
   .guarantee h2 {

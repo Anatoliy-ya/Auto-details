@@ -29,10 +29,6 @@ function createProductCard(product) {
   productName.textContent = product.name;
   productCard.appendChild(productName);
 
-  const productAvailable = document.createElement('p');
-  productAvailable.textContent = product.available;
-  productCard.appendChild(productAvailable);
-
   // Добавляем обработчик событий для открытия модального окна
   productCard.addEventListener('click', function () {
     fillModalWithProductInfo(product);
