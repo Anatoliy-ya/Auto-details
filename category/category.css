@@ -413,7 +413,9 @@ h3 {
 
   .modal-content {
     flex-direction: column;
-    min-width: 20rem;
+    min-width: 25rem;
+    max-width: 30rem;
+    min-height: 40rem;
   }
 
   .modal-content img {
@@ -421,6 +423,7 @@ h3 {
     border-radius: 10px;
     margin: 0.5rem;
     height: 50%;
+    max-width: 30rem;
   }
 }
 
