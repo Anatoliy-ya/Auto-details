@@ -24,7 +24,7 @@ header {
   align-items: center;
   transition: all 0.3s ease; /* Добавляем плавное изменение стилей */
   min-width: 41rem;
-  z-index: 5;
+  z-index: 3;
 }
 
 .red-line-under-header {
@@ -192,6 +192,7 @@ nav ul li a {
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+
   gap: 20px; /* Расстояние между карточками */
   justify-items: center;
   margin-bottom: 2rem;
@@ -206,7 +207,7 @@ nav ul li a {
   border-radius: 5px;
   margin-bottom: 1rem;
   cursor: pointer;
-  width: 100%;
+  max-width: 22rem;
   height: 100%;
 }
 
@@ -264,6 +265,7 @@ nav ul li a {
   margin: auto; /* 15% от верха и по центру */
   padding: 20px;
   border: 1px solid #888;
+  width: 80%;
   min-width: 25rem;
   min-height: 60%;
   opacity: 100%;

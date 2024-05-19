@@ -218,9 +218,10 @@ nav ul li a {
   padding: 15px;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* 4 столбцов */
-  gap: 20px 0; /* Расстояние между кнопками */
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr)); /* 4 столбцов */
+  gap: 20px; /* Расстояние между кнопками */
   align-content: space-around; /* Выравнивание по вертикали по центру */
+  align-items: center;
 }
 
 .item {
